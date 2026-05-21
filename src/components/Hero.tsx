@@ -38,13 +38,15 @@ export default function Hero() {
               <Download size={20} />
               Download Now
             </button>
-            <button
+            <a
               className="btn btn-secondary btn-large"
-              onClick={() => scrollTo('features')}
+              href="https://github.com/Vertex-Linux/vertex-linux"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Github size={20} />
               View on GitHub
-            </button>
+            </a>
           </div>
         </div>
       </div>
