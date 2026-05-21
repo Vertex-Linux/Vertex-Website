@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
 export interface ReleaseInfo {
-  version: string
+  version:     string
   downloadUrl: string
-  fileName: string
+  fileName:    string
 }
 
 type State =
@@ -11,13 +11,7 @@ type State =
   | { status: 'ready'; release: ReleaseInfo }
   | { status: 'unavailable' }
 
-const ISO_RE = /vertex-linux-(\d{4})\.(\d{2})\.(\d{2})-x86_64/i
-
-function parseVersion(name: string): string | null {
-  const m = ISO_RE.exec(name)
-  if (!m) return null
-  return `${m[1]}.${m[2]}.${m[3]}`
-}
+const API_BASE = 'https://vertexdl.arc360hub.com'
 
 export function useLatestRelease(): State {
   const [state, setState] = useState<State>({ status: 'loading' })
@@ -25,31 +19,21 @@ export function useLatestRelease(): State {
   useEffect(() => {
     let cancelled = false
 
-    fetch('https://api.github.com/repos/Vertex-Linux/vertex-linux/releases/latest', {
-      headers: { Accept: 'application/vnd.github+json' },
-    })
+    fetch(`${API_BASE}/latest`)
       .then((r) => {
-        if (!r.ok) throw new Error('no release')
+        if (!r.ok) throw new Error('server error')
         return r.json()
       })
-      .then((data) => {
+      .then((data: { available: boolean; version: string; fileName: string; downloadUrl: string }) => {
         if (cancelled) return
-
-        const assets: { name: string; browser_download_url: string }[] =
-          data.assets ?? []
-
-        const iso = assets.find((a) => ISO_RE.test(a.name))
-        if (!iso) throw new Error('no iso asset')
-
-        const version = parseVersion(iso.name)
-        if (!version) throw new Error('bad name')
+        if (!data.available) throw new Error('no release')
 
         setState({
           status: 'ready',
           release: {
-            version,
-            downloadUrl: iso.browser_download_url,
-            fileName: iso.name,
+            version:     data.version,
+            downloadUrl: data.downloadUrl,
+            fileName:    data.fileName,
           },
         })
       })

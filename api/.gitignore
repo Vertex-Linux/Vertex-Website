@@ -1,0 +1,5 @@
+node_modules/
+
+# Ignore actual release files but keep the folder
+releases/*
+!releases/.gitkeep

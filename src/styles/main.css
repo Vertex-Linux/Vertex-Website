@@ -1101,6 +1101,173 @@ button {
   color: var(--purple-light);
 }
 
+/* ── Warning Modal ───────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: #0f0f1c;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px 32px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(245, 158, 11, 0.08);
+  animation: fadeInUp 0.25s ease;
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-1);
+}
+
+.modal-icon-wrap {
+  width: 64px;
+  height: 64px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f59e0b;
+  margin-bottom: 20px;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
+}
+
+.modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  color: var(--text-1);
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+.modal-body strong {
+  color: var(--text-1);
+}
+
+.modal-warning-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  border-radius: var(--radius-md);
+}
+
+.modal-warning-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.modal-warning-list li::before {
+  content: '⚠';
+  font-size: 12px;
+  color: #f59e0b;
+  flex-shrink: 0;
+}
+
+/* ── Modal download button with fill ─────────────────────── */
+.modal-download-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  font-weight: 600;
+  overflow: hidden;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.modal-download-filling {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-3);
+  cursor: not-allowed;
+}
+
+.modal-download-ready {
+  background: linear-gradient(135deg, var(--purple), var(--cyan-dark));
+  color: #fff;
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+  cursor: pointer;
+}
+
+.modal-download-ready:hover {
+  box-shadow: 0 0 50px rgba(139, 92, 246, 0.6);
+  opacity: 0.95;
+}
+
+.modal-btn-fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.35), rgba(8, 145, 178, 0.35));
+  transform-origin: left center;
+  animation: btnFill linear forwards;
+  border-radius: inherit;
+}
+
+@keyframes btnFill {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+.modal-btn-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* ── Roadmap Page ────────────────────────────────────────── */
 .roadmap-page {
   min-height: 100vh;

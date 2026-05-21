@@ -1,11 +1,13 @@
+import { useState } from 'react'
 import { Download as DownloadIcon, HardDrive, Cpu, MemoryStick, Clock, Zap } from 'lucide-react'
 import { useLatestRelease } from '../hooks/useLatestRelease'
+import WarningModal from './WarningModal'
 
 const meta = [
   { icon: HardDrive,    text: '4 GB minimum disk' },
   { icon: Cpu,         text: 'x86_64 · 2GHz+' },
   { icon: MemoryStick, text: '2 GB RAM minimum' },
-  { icon: Zap, text: 'Power Optional' },
+  { icon: Zap,         text: 'Power Optional' },
 ]
 
 const options = [
@@ -16,6 +18,7 @@ const options = [
 
 export default function Download() {
   const release = useLatestRelease()
+  const [modalOpen, setModalOpen] = useState(false)
 
   const isLoading     = release.status === 'loading'
   const isUnavailable = release.status === 'unavailable'
@@ -23,9 +26,7 @@ export default function Download() {
 
   const versionLabel = isReady
     ? `Vertex ${release.release.version}`
-    : isLoading
-      ? 'Loading…'
-      : 'Coming Soon'
+    : isLoading ? 'Loading…' : 'Coming Soon'
 
   return (
     <section className="section download" id="download">
@@ -50,14 +51,13 @@ export default function Download() {
 
           <div className="download-btn-wrap">
             {isReady ? (
-              <a
-                href={release.release.downloadUrl}
+              <button
                 className="btn btn-primary btn-large"
-                download={release.release.fileName}
+                onClick={() => setModalOpen(true)}
               >
                 <DownloadIcon size={22} />
                 Download {versionLabel}
-              </a>
+              </button>
             ) : (
               <button
                 className="btn btn-primary btn-large"
@@ -93,6 +93,15 @@ export default function Download() {
           )}
         </div>
       </div>
+
+      {isReady && (
+        <WarningModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          downloadUrl={release.release.downloadUrl}
+          fileName={release.release.fileName}
+        />
+      )}
     </section>
   )
 }
