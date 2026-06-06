@@ -32,10 +32,10 @@ const milestones: Milestone[] = [
     version: 'v2026.06',
     date: 'June 2026',
     title: 'Hardware & Driver Improvements & Software Store',
-    status: 'in-progress',
+    status: 'shipped',
     items: [
-      { text: 'Lenovo Legion Wi-Fi driver bundled out of the box' },
-      { text: 'Improved touchpad and stylus support' },
+      { text: 'Lenovo Legion Wi-Fi driver bundled out of the box (Unfinished)' },
+      { text: 'Full custom desktop environment (Calla Desktop)' },
       { text: 'Full GUI front-end for vpkg' },
       { text: 'Better power management defaults' },
     ],

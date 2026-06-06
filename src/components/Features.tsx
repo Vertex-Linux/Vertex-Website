@@ -38,9 +38,9 @@ const features: Feature[] = [
   {
     icon: Monitor,
     iconClass: 'feature-icon-blue',
-    name: 'Plasma Desktop',
+    name: 'Calla Desktop',
     desc:
-      'Ships automaticly with KDE plasma with a few custom wallpapers and a custom start menu icon.',
+      'Ships with our own desktop environment named Calla that you can easaly update via the Vertex Updater!',
   },
   {
     icon: Monitor,
@@ -48,6 +48,13 @@ const features: Feature[] = [
     name: 'Better Driver Support',
     desc:
       'Vertex will include extra driver support for Lenovo Legion Wifi drivers and other things like easy graphics driver managment too.',
+  },
+  {
+    icon: Monitor,
+    iconClass: 'feature-icon-blue',
+    name: 'Ultra fast custom apps',
+    desc:
+      'Vertex Linux includes a super fast set of apps that are written in ethier LUA, Rust, or C++, making all of the apps included in Vertex Linux extremely fast.',
   }
 ]
 
