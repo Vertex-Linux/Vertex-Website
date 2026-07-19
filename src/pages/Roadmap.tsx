@@ -44,9 +44,10 @@ const milestones: Milestone[] = [
     version: 'v2026.07',
     date: 'July 2026',
     title: 'Extra update stuff',
-    status: 'future',
+    status: 'shipped',
     items: [
-      { text: 'Implement our own custom web browser baised on firefox' },
+      { text: 'Fix some general bugs with the desktop environment' },
+      { text: 'Update all of the custom Vertex software' },
       { text: 'Make the OS run on a more wide range of hardware' },
     ],
   },
@@ -56,9 +57,7 @@ const milestones: Milestone[] = [
     title: 'ARM & Portability',
     status: 'future',
     items: [
-      { text: 'ARM64 image — Raspberry Pi 5 support' },
-      { text: 'ARM laptop optimizations (Apple Silicon/Snapdragon)' },
-      { text: 'Live USB persistence mode' },
+      { text: 'We dont know just yet what were going to do for this update, come back later!' }
     ],
   },
 ]
