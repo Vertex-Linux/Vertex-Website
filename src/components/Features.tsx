@@ -38,9 +38,9 @@ const features: Feature[] = [
   {
     icon: Monitor,
     iconClass: 'feature-icon-blue',
-    name: 'Calla Desktop',
+    name: 'Gnome Desktop',
     desc:
-      'Ships with our own desktop environment named Calla that you can easaly update via the Vertex Updater!',
+      'Ships with the nice and clean Gnome Desktop with Blur My Shell pre-installed!',
   },
   {
     icon: Monitor,

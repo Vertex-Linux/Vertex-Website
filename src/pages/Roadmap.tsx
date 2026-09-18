@@ -53,11 +53,20 @@ const milestones: Milestone[] = [
   },
   {
     version: 'v2026.08',
-    date: 'Augest 2026',
+    date: 'August 2026',
     title: 'ARM & Portability',
     status: 'future',
     items: [
       { text: 'We dont know just yet what were going to do for this update, come back later!' }
+    ],
+  },
+  {
+    version: 'v2026.09',
+    date: 'September 2026',
+    title: 'Debian Rewrite',
+    status: 'shipped',
+    items: [
+      { text: 'Completly remake the OS to use Debian as the base instead of Arch Linux. Super early beta available.' }
     ],
   },
 ]
