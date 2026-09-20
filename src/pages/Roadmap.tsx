@@ -73,7 +73,7 @@ const milestones: Milestone[] = [
     version: 'v2026.10',
     date: 'October 2026',
     title: 'Tools Rewrite',
-    status: 'shipped',
+    status: 'in-progress',
     items: [
       { text: 'Rewrite the tools (Vertex updater, VPKG, Vertex Driver Downloader) for Debian and include them in the debian rewrite.' }
     ],
