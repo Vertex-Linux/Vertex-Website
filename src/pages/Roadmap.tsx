@@ -69,6 +69,15 @@ const milestones: Milestone[] = [
       { text: 'Completly remake the OS to use Debian as the base instead of Arch Linux. Super early beta available.' }
     ],
   },
+  {
+    version: 'v2026.10',
+    date: 'October 2026',
+    title: 'Tools Rewrite',
+    status: 'shipped',
+    items: [
+      { text: 'Rewrite the tools (Vertex updater, VPKG, Vertex Driver Downloader) for Debian and include them in the debian rewrite.' }
+    ],
+  },
 ]
 
 const statusConfig: Record<Status, { label: string; icon: typeof CheckCircle2; className: string }> = {
@@ -160,7 +169,7 @@ export default function Roadmap() {
 
         <p className="roadmap-note">
           Dates are estimates and may shift. Follow{' '}
-          <a href="https://github.com/Vertex-Linux/vertex-linux" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Vertex-Linux/Vertex-Debian" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>{' '}
           for the most up-to-date progress.

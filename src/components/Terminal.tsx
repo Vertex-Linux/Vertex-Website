@@ -5,16 +5,16 @@ interface Line {
 }
 
 const lines: Line[] = [
-  { type: 'cmd',     prompt: 'vertex@arch ~',  text: 'vpkg pm install prismlauncher' },
+  { type: 'cmd',     prompt: 'vertex@debian ~',  text: 'vpkg apt install prismlauncher' },
   { type: 'info',    text: '→  Vertex Pkg 2026.1' },
   { type: 'output',  text: '   Install logs will appear here when used on an actual system' },
   { type: 'success', text: '✓  Prismlauncher was installed sucsessfuly!' },
-  { type: 'cmd',     prompt: 'vertex@arch ~',  text: 'vpkg fp install com.obsproject.Studio' },
+  { type: 'cmd',     prompt: 'vertex@debian ~',  text: 'vpkg fp install com.obsproject.Studio' },
   { type: 'info',    text: '→  Vertex Pkg 2026.1' },
   { type: 'output',  text: '   Install logs will appear here when used on an actual system' },
   { type: 'success', text: '✓  com.obsproject.Studio was installed sucsessfuly!' },
-  { type: 'cmd',     prompt: 'vertex@arch ~',  text: 'echo "Works with AUR, Flatpak, and Pacman!"' },
-  { type: 'output',  text: '   Works with AUR, Flatpak, and Pacman!' },
+  { type: 'cmd',     prompt: 'vertex@debian ~',  text: 'echo "Works with APT and Flatpak!"' },
+  { type: 'output',  text: '   Works with APT and Flatpak!' },
 ]
 
 export default function Terminal() {
@@ -28,7 +28,7 @@ export default function Terminal() {
             <span className="gradient-text">secconds</span>
           </h2>
           <p className="terminal-sub">
-            Our custom package manager (vpkg) built on the AUR and pacman and flatpak allows you to manage all 3 with 1 command.
+            Our custom package manager (vpkg) built on APT and Flatpak lets you manage both with 1 command.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ export default function Terminal() {
             <div className="dot dot-red"    />
             <div className="dot dot-yellow" />
             <div className="dot dot-green"  />
-            <div className="terminal-name">vertex@arch — bash</div>
+            <div className="terminal-name">vertex@debian — bash</div>
           </div>
 
           <div className="terminal-body">
@@ -63,7 +63,7 @@ export default function Terminal() {
               )
             })}
             <div className="term-line" style={{ marginTop: 4 }}>
-              <span className="term-prompt">vertex@arch ~&nbsp;$&nbsp;</span>
+              <span className="term-prompt">vertex@debian ~&nbsp;$&nbsp;</span>
               <span className="term-cursor" />
             </div>
           </div>

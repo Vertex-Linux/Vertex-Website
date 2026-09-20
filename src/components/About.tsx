@@ -14,7 +14,7 @@ const pillars = [
   {
     icon: Code2,
     name: 'Hackable to the Core',
-    desc: 'Arch at its heart means total control. Change anything — that\'s the point.',
+    desc: 'Debian at its heart means total control. Change anything — that\'s the point.',
   },
 ]
 
@@ -44,14 +44,15 @@ export default function About() {
               <span className="gradient-text">by design</span>
             </h2>
             <p className="about-body">
-              Vertex Linux started as a frustration. Every "beginner-friendly" Arch
-              derivative either buried the power users needed or buried beginners in
+              Vertex Linux started as a frustration. Every "beginner-friendly" Linux
+              distro either buried the power users needed or buried beginners in
               complexity. We wanted neither.
             </p>
             <p className="about-body">
               So we built Vertex: a distro that respects your intelligence, ships with
               sensible defaults, and gets completely out of your way once you're up and
-              running. Full Arch compatibility, full AUR access, none of the headaches.
+              running. Built on Debian's rock-solid stability with GNOME's polish, full
+              APT and Flatpak access, none of the headaches.
             </p>
 
             <div className="about-pillars">
@@ -77,7 +78,7 @@ export default function About() {
             <div className="about-card-stack">
               <div className="about-card about-card-main">
                 <div className="card-tag">
-                  <span>●</span> Arch-based · Rolling
+                  <span>●</span> Debian-based · Stable
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
                   <Logo />
@@ -94,10 +95,10 @@ export default function About() {
 
               <div className="about-card about-card-accent">
                 <div style={{ fontSize: 26, fontWeight: 900 }} className="gradient-text">
-                  AUR
+                  APT
                 </div>
                 <div style={{ fontSize: 12, color: 'var(--text-3)', textAlign: 'center' }}>
-                  Full Arch User<br />Repository access
+                  Full Debian package<br />archive access
                 </div>
               </div>
 

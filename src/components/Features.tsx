@@ -17,16 +17,16 @@ const features: Feature[] = [
   {
     icon: RefreshCw,
     iconClass: 'feature-icon-purple',
-    name: 'Rolling Release',
+    name: 'Rock-Solid Stable Base',
     desc:
-      'Stay updated with our Update Manager, and the fact that arch linux is already the most up-to-date OS that you can have.',
+      'Built on Debian stable, kept fresh with our Update Manager, so you get dependable releases without sacrificing up-to-date software.',
   },
   {
     icon: Package,
     iconClass: 'feature-icon-cyan',
     name: 'Custom Package Manager',
     desc:
-      'Manage Flatpak, AUR, and Pacman packages with 1 single command, without having to use all 3 at all times.',
+      'Manage APT and Flatpak packages with 1 single command, without having to juggle both separately.',
   },
   {
     icon: Shield,

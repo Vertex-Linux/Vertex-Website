@@ -27,7 +27,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-desc">
-            An arch linux baised operating system with lots of features, its own package manager, and nice UI!
+            A Debian-based operating system with lots of features, its own package manager, and nice UI!
           </p>
 
           <div className="hero-actions">
@@ -40,7 +40,7 @@ export default function Hero() {
             </button>
             <a
               className="btn btn-secondary btn-large"
-              href="https://github.com/Vertex-Linux/vertex-linux"
+              href="https://github.com/Vertex-Linux/Vertex-Debian"
               target="_blank"
               rel="noopener noreferrer"
             >

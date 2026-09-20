@@ -32,7 +32,7 @@ const cols = [
     heading: 'Community',
     links: [
       { label: 'Discord', href: 'https://discord.gg/5aps88CkGx' },
-      { label: 'GitHub',  href: 'https://github.com/Vertex-Linux/vertex-linux' },
+      { label: 'GitHub',  href: 'https://github.com/Vertex-Linux/Vertex-Debian' },
     ],
   },
 ]
@@ -50,7 +50,7 @@ export default function Footer() {
               <span className="footer-logo-text">Vertex Linux</span>
             </div>
             <p>
-              An arch linux baised operating system with lots of features, its own package manager, and nice UI!
+              A Debian-based operating system with lots of features, its own package manager, and nice UI!
             </p>
             <div className="footer-socials">
               <a className="social-btn" href="https://github.com/Vertex-Linux" aria-label="GitHub">
