@@ -29,7 +29,7 @@ export default function Showcase() {
     <section className="section" id="showcase">
       <div className="container">
         <div className="showcase-header">
-          <span className="section-label">Calla Desktop</span>
+          <span className="section-label">Gnome Desktop</span>
           <h2 className="showcase-title">
             A desktop that{' '}
             <span className="gradient-text">gets out of your way</span>
@@ -55,7 +55,7 @@ export default function Showcase() {
                 <img
                   className="showcase-image"
                   src={shot.src}
-                  alt={`Calla Desktop — ${shot.name}`}
+                  alt={`Gnome Desktop — ${shot.name}`}
                   loading="lazy"
                 />
               </div>
@@ -80,7 +80,7 @@ export default function Showcase() {
             <img
               className="lightbox-image"
               src={active.src}
-              alt={`Calla Desktop — ${active.name}`}
+              alt={`Gnome Desktop — ${active.name}`}
             />
             <p className="lightbox-caption">{active.name}</p>
           </div>
