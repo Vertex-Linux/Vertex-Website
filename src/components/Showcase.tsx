@@ -8,9 +8,9 @@ interface Shot {
 
 const shots: Shot[] = [
   { src: '/i1.png', name: 'Desktop' },
-  { src: '/i2.png', name: 'Control Center' },
-  { src: '/i3.png', name: 'Settings' },
-  { src: '/i4.png', name: 'Prism Launcher' },
+  { src: '/i2.png', name: 'Settings' },
+  { src: '/i3.png', name: 'File Explorer' },
+  { src: '/i4.png', name: 'Terminal (fastfetch)' },
 ]
 
 export default function Showcase() {
