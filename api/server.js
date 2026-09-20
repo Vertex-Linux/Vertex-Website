@@ -9,8 +9,8 @@ const HOST = process.env.HOST || 'https://vertexdl.arc360hub.com'
 
 const RELEASES_DIR = path.join(__dirname, 'releases')
 
-// Matches: vertex-linux-YYYY.MM.DD-x86_64  (any extension)
-const RELEASE_RE = /^vertex-linux-(\d{4})\.(\d{2})\.(\d{2})-x86_64/
+// Matches: vertex-linux-X.Y[.Z...]-amd64  (any extension)
+const RELEASE_RE = /^vertex-linux-(\d+(?:\.\d+)*)-amd64/
 
 // ── CORS ──────────────────────────────────────────────────
 app.use(cors({
@@ -23,20 +23,31 @@ app.use(cors({
 let cachedLatest = null
 const POLL_INTERVAL_MS = 60 * 1000 // 1 minute
 
+// Numeric compare of dotted version strings, e.g. "1.10" > "1.9"
+function compareVersions(a, b) {
+  const pa = a.split('.').map(Number)
+  const pb = b.split('.').map(Number)
+
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const diff = (pa[i] ?? 0) - (pb[i] ?? 0)
+    if (diff !== 0) return diff
+  }
+  return 0
+}
+
 function scanReleases() {
   if (!fs.existsSync(RELEASES_DIR)) return null
 
   const files = fs.readdirSync(RELEASES_DIR)
     .filter(f => RELEASE_RE.test(f) && f !== '.gitkeep')
-    .sort()   // lexicographic sort works because YYYY.MM.DD is zero-padded
-    .reverse()
+    .sort((a, b) => compareVersions(parseVersion(b), parseVersion(a)))
 
   return files[0] ?? null
 }
 
 function parseVersion(filename) {
   const m = RELEASE_RE.exec(filename)
-  return m ? `${m[1]}.${m[2]}.${m[3]}` : null
+  return m ? m[1] : null
 }
 
 function refreshCache() {
