@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2025 Vertex Linux Project. GPL-2.0 Licensed.</p>
+          <p>© 2026 Vertex Linux Project. GPL-2.0 Licensed.</p>
           <div className="footer-bottom-links">
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
