@@ -66,16 +66,8 @@ const milestones: Milestone[] = [
     title: 'Debian Rewrite',
     status: 'shipped',
     items: [
-      { text: 'Completly remake the OS to use Debian as the base instead of Arch Linux. Super early beta available.' }
-    ],
-  },
-  {
-    version: 'v2026.10',
-    date: 'October 2026',
-    title: 'Tools Rewrite',
-    status: 'in-progress',
-    items: [
-      { text: 'Rewrite the tools (Vertex updater, VPKG, Vertex Driver Downloader) for Debian and include them in the debian rewrite.' }
+      { text: 'Completly remake the OS to use Debian as the base instead of Arch Linux. Super early beta available.' },
+      { text: 'Remade all of the tools to work for the new Debian base.' }
     ],
   },
 ]
