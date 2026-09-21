@@ -52,15 +52,6 @@ const milestones: Milestone[] = [
     ],
   },
   {
-    version: 'v2026.08',
-    date: 'August 2026',
-    title: 'ARM & Portability',
-    status: 'future',
-    items: [
-      { text: 'We dont know just yet what were going to do for this update, come back later!' }
-    ],
-  },
-  {
     version: 'v2026.09',
     date: 'September 2026',
     title: 'Debian Rewrite',
